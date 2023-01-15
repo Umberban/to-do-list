@@ -1,18 +1,25 @@
 {
   "name": "webpack-test",
   "version": "1.0.0",
+  "repository": {
+    "url": "git+https://github.com/Umberban/to-do-list.git"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
+    "build": "webpack --mode development",
     "start": "webpack server --mode development --open",
-    "server": "json-server -w server/db.json"
+    "server": "json-server -w server/db.json",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d src"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "json-server": "^0.17.0",
     "style-loader": "^3.3.1",
